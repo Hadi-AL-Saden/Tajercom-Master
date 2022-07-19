@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\Auth\AuthController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,7 +25,7 @@ Route::get('/index.html', function () {/*===========>>Home */
     return view('./index');
 });
 
-Route::get('/shop.html', function () {/*===========>>Shop */
+Route::get('/shop', function () {/*===========>>Shop */
     return view('./shop');
 });
 
@@ -41,4 +43,15 @@ Route::get('/checkout.html', function () {/*===========>>checkout */
 
 Route::get('/cart.html', function () {/*===========>>cart */
     return view('./cart');
-}); 
+});
+
+
+
+
+
+Route::get('login', [AuthController::class, 'index'])->name('login');
+Route::post('post-login', [AuthController::class, 'postLogin'])->name('login.post'); 
+Route::get('registration', [AuthController::class, 'registration'])->name('register');
+Route::post('post-registration', [AuthController::class, 'postRegistration'])->name('register.post'); 
+Route::get('dashboard', [AuthController::class, 'dashboard']); 
+Route::get('logout', [AuthController::class, 'logout'])->name('logout');
