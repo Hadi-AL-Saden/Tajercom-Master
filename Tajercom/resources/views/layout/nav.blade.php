@@ -49,70 +49,52 @@
                             </div>
                         </div>
                         <a href="contact.html" class="nav-item nav-link">Contact</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Acount <i class="fa fa-angle-down mt-1"></i></a>
-                            <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
-                              {{-- ====================================================================== --}}
-
-<a href="">
-
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-
-                        @guest
+                        
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Acount <i class="fa fa-angle-down mt-1"></i></a>
+                        <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
+                            @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="dropdown-item" href="{{ route('login') }}"><i class="fa-solid fa-right-to-bracket"> </i> {{ __('Login') }}</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                           
-
-                                   
-
-                               
-                  
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-
-                       
+                            <li class="nav-item">
+                                <a class="dropdown-item" href="{{ route('register') }}"><i class="fa-solid fa-user-plus"></i> {{ __('Signup') }} </a>
+                            </li>
+                        @endif
+                    @else
 
 
 
+                            <a href="/user" class="dropdown-item"><i class="fa-solid fa-user">  </i> {{ Auth::user()->name }} </a>
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                          document.getElementById('logout-form').submit();"><i class="fa-solid fa-arrow-right-from-bracket"> </i>{{ __('Logout') }}
+                            
+                         </a>
 
-                    </a>
+                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
 
 
-                              {{-- ====================================================================== --}}
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
+                        </div>@endguest
 
-                        <a href="" class="btn px-0 ml-3">
-                            <i class="fa-solid fa-user text-primary"> {{ Auth::user()->name }} 
-                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                onclick="event.preventDefault();
-                                              document.getElementById('logout-form').submit();">
-                                 {{ __('Logout') }}
-                             </a></i>
-                        </a>
+
                         
-                    </div> @endguest
-                </div>
+                    </div> 
+
+                </div>                    <div class="" style="display: inline">
+                        <a href="./product" class="" >Add product <i class="fa-solid fa-plus"></i></a>
+
+                    </div> 
             </nav>
         </div>
     </div>
 </div>
 <!-- Navbar End -->
+<script src="https://kit.fontawesome.com/41d0e79cb4.js" crossorigin="anonymous"></script>

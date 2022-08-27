@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
+
 
 
 /*
@@ -20,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('./index');
 });
-Route::get('/index.html', function () {/*===========>>Home */
+Route::get('/index', function () {/*===========>>Home */
     return view('./index');
 });
 
@@ -46,10 +48,24 @@ Route::get('/cart.html', function () {/*===========>>cart */
 Route::get('/Home', function () {/*===========>>cart */
     return view('./home');
 });
+Route::get('/product', function () {/*===========>>product */
+    return view('./product');
+});
+Route::get('/user', function () {/*===========>>product */
+    return view('./userProfiles');
+});
+// ========================================================>
 
 
+
+Route::get('add-product', [ProductController::class, 'create']);
+Route::post('add-product', [ProductController::class, 'store']);
+
+
+
+// ========================================================>
 
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
