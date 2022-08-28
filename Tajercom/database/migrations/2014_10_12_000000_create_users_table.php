@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->integer('phone_num')->nullable();
             $table->string('address')->nullable();
             $table->string('market_name')->nullable();
+            $table->string('avatar')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

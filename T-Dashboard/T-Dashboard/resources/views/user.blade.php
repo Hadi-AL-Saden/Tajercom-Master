@@ -213,6 +213,9 @@
                 <!-- ============================================================== -->
                 <div class="row">
                     <div class="col-sm-12">
+                        @if (session('status'))
+                <h6 class="alert alert-success">{{ session('status') }}</h6>
+            @endif
                         <div class="white-box">
                             <h3 class="box-title">Basic Table</h3>
                             <p class="text-muted">Add class <code>.table</code></p>
@@ -225,9 +228,10 @@
                                             <th class="border-top-0">Name</th>
                                             <th class="border-top-0">Email</th>
                                             <th class="border-top-0">Phone</th>
-                                            <th class="border-top-0">Password</th>
+                                            <th class="border-top-0">address</th>
+                                           
                                             <th class="border-top-0">Usre Image</th>
-                                            <th class="border-top-0">Role</th>
+                                            {{-- <th class="border-top-0">Role</th> --}}
                                             <th class="border-top-0">Delete</th>
                                             <th class="border-top-0">Edit</th>
                                         </tr>
@@ -237,14 +241,18 @@
 
                                         <tr>
                                             <td>{{ $item->id }}</td>
-                                            <td>{{ $item->name }}</td>
+                                            <td>{{ $item->name }}</td>  
                                             <td>{{ $item->email }}</td>
-                                            <td>@Genelia</td>
-                                            <td>admin</td>
-                                            <td>admin</td>
-                                            <td>admin</td>
-                                            <td> <a href="{{ url('edit-student/'.$item->id) }}" class="btn btn-danger btn-sm">Edit</a></td>
-                                            <td> <a href="{{ url('edit-student/'.$item->id) }}" class="btn btn-primary btn-sm">Edit</a></td>
+                                            <td>{{ $item->phone_num }}</td>
+                                            <td>{{ $item->address }}</td>
+                                            <td><img src="{{ $item->avatar }}" alt=""></td>
+                                            
+                                      
+                                            
+                                            {{-- delete --}}
+                                            <td><a href="{{ url('delete-user/'.$item->id) }}" class="btn btn-danger btn-sm">Delete</a></td>
+                                            {{-- edit --}}
+                                            <td><a href="{{ url('edit-user/'.$item->id) }}" class="btn btn-primary btn-sm">Edit</a></td>
                                             
                                         @endforeach
 

@@ -12,10 +12,57 @@ class UseCon extends Controller
     public function index()
     {
         $fetch = User::all();
-        return view('/basic-table', compact('fetch'));
+        return view('/user', compact('fetch'));
+    }
+
+
+    public function edit($id)
+    {
+        $User = User::find($id);
+        return view('/edit', compact('User'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $User = User::find($id);
+        $User->name = $request->input('name');
+        $User->email = $request->input('email');
+        $User->phone_num = $request->input('phone_num');
+        $User->address = $request->input('address');
+        // $User->avatar = $request->input('avatar');
+
+
+        
+
+        $User->update();
+        return redirect()->back()->with('status','User Updated Successfully');
+    }
+
+    public function destroy($id)
+    {
+        $User = User::findOrFail($id);
+        $User->delete();
+        return redirect()->back()->with('status','User Deleted Successfully');
     }
 
 
 
+    public function store(Request $request)
+    {
+        $User = new User;
+       
+
+        if($request->hasfile('avatar'))
+        {
+            $file = $request->file('avatar');
+            $extenstion = $file->getClientOriginalExtension();
+            $filename = time().'.'.$extenstion;
+            $file->move('uploads/avatar/', $filename);
+            $User->avatar = $filename;
+        }
+
+        $User->save();
+        // return redirect()->back()->with('message','User Image Upload Successfully');
+    }
 
 }

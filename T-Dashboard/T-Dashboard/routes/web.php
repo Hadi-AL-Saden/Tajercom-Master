@@ -31,19 +31,28 @@ Route::get('/404', function () {
 Route::get('/map-google', function () {
     return view('map-google');
 });
-Route::get('/basic-table', function () {
-    return view('basic-table');
+Route::get('/user', function () {
+    return view('user');
 });
 Route::get('/map-google', function () {
     return view('map-google');
 });
-Route::get('edit-student/{id}', [StudentController::class, 'edit']);
 
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+// get users data 
+Route::get('/user', [UseCon::class, 'index']);
 
-Route::get('/basic-table', [UseCon::class, 'index']);
+// Edit Uesr 
+// Route::get('students', [StudentController::class, 'index']);
+Route::get('edit-user/{id}', [UseCon::class, 'edit']);
+Route::put('update-user/{id}', [UseCon::class, 'update']);
 
+// Delete Uesr 
+Route::get('delete-user/{id}', [UseCon::class, 'destroy']);
+
+
+Route::post('User', [App\Http\Controllers\UseCon::class, 'store']);
