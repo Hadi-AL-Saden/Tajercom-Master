@@ -151,15 +151,15 @@
                     <div class="offer-text">
                         <h6 class="text-white text-uppercase">Save 20%</h6>
                         <h3 class="text-white mb-3">Special Offer</h3>
-                        <a href="" class="btn btn-primary">Shop Now</a>
+                        <a  class="btn btn-primary">coming soon <i class="fa-solid fa-lock"></i></a>
                     </div>
                 </div>
                 <div class="product-offer mb-30" style="height: 200px;">
                     <img class="img-fluid" src="img/offer-2.jpg" alt="">
                     <div class="offer-text">
-                        <h6 class="text-white text-uppercase">Save 20%</h6>
+                        <h6 class="text-white text-uppercase">Save 40%</h6>
                         <h3 class="text-white mb-3">Special Offer</h3>
-                        <a href="" class="btn btn-primary">Shop Now</a>
+                        <a  class="btn btn-primary">coming soon <i class="fa-solid fa-lock"></i></a>
                     </div>
                 </div>
             </div>

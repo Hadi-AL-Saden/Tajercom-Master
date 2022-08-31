@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UseCon;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\CategoryController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,27 +19,29 @@ use App\Http\Controllers\UseCon;
 Route::get('/', function () {
     return view('dashboard');
 });
-Route::get('/fontawesome', function () {
-    return view('fontawesome');
-});
-Route::get('/blank', function () {
-    return view('blank');
-});
+// Route::get('/fontawesome', function () {
+//     return view('fontawesome');
+// });
+// Route::get('/blank', function () {
+//     return view('blank');
+// });
 Route::get('/profile', function () {
     return view('profile');
 });
-Route::get('/404', function () {
-    return view('404');
-});
+
 Route::get('/map-google', function () {
     return view('map-google');
 });
 Route::get('/user', function () {
     return view('user');
 });
-Route::get('/map-google', function () {
-    return view('map-google');
+Route::get('/category', function () {
+    return view('category');
 });
+Route::get('/add category', function () {
+    return view('addCategory');
+});
+
 
 
 Auth::routes();
@@ -47,12 +52,20 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/user', [UseCon::class, 'index']);
 
 // Edit Uesr 
-// Route::get('students', [StudentController::class, 'index']);
 Route::get('edit-user/{id}', [UseCon::class, 'edit']);
 Route::put('update-user/{id}', [UseCon::class, 'update']);
 
 // Delete Uesr 
 Route::get('delete-user/{id}', [UseCon::class, 'destroy']);
 
-
 Route::post('User', [App\Http\Controllers\UseCon::class, 'store']);
+
+// ================================================================
+
+// Add Category
+
+Route::get('add-category', [CategoryController::class, 'create']);
+Route::post('add-category', [CategoryController::class, 'store']);
+
+
+Route::post('add-category', [App\Http\Controllers\CategoryController::class, 'store']);

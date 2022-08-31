@@ -19,7 +19,7 @@ class CreateProductsTable extends Migration
             
             $table->id();
             $table->integer('user_id')->nullable();
-            // $table->string('user_name');
+            $table->integer('catagory_id')->nullable();
             $table->string('product_name');
             $table->string('product_img');
             $table->integer('product_price');

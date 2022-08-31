@@ -31,10 +31,17 @@ class UseCon extends Controller
         $User->address = $request->input('address');
         // $User->avatar = $request->input('avatar');
 
-
-        
-
+        if($request->hasfile('avatar'))
+        {
+            $file = $request->file('avatar');
+            $extenstion = $file->getClientOriginalExtension();
+            $filename = time().'.'.$extenstion;
+            $file->move('upload/avatar/', $filename);
+            $User->avatar = $filename;
+        }
+        $User->save();
         $User->update();
+        
         return redirect()->back()->with('status','User Updated Successfully');
     }
 
@@ -47,22 +54,6 @@ class UseCon extends Controller
 
 
 
-    public function store(Request $request)
-    {
-        $User = new User;
-       
 
-        if($request->hasfile('avatar'))
-        {
-            $file = $request->file('avatar');
-            $extenstion = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extenstion;
-            $file->move('uploads/avatar/', $filename);
-            $User->avatar = $filename;
-        }
-
-        $User->save();
-        // return redirect()->back()->with('message','User Image Upload Successfully');
-    }
 
 }

@@ -16,7 +16,7 @@
                 </div>
                 <div class="card-body">
 
-                    <form action="{{ url('update-user/'.$User->id) }}" method="POST">
+                    <form action="{{ url('update-user/'.$User->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
 

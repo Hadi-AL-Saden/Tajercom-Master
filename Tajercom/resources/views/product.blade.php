@@ -67,9 +67,21 @@
                             </div>
                             <div class="form-group mb-3">
                                 <label for="">Product image</label><br>
-                                <input type="file" name="Product_img" class="form-control" required>
+                                <input type="file" name="Product_img" class="form-control " required>
                             </div>
                             <div class="form-group mb-3">
+                                <label for="">Product Catagory</label>
+                                <select name="cat" class="form-control">
+
+                                    <option value="1">Cars</option>
+                                    <option value="2">Clothes</option>
+                                    <option value="3">buildings</option>
+                                    <option value="4">Miscellaneous</option>
+
+                                  </select>
+                            </div>
+                            <div class="form-group mb-3">
+                                
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </div>
     

@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use Illuminate\Support\Facades\Auth;
+
 
 
 
@@ -48,9 +50,12 @@ Route::get('/cart.html', function () {/*===========>>cart */
 Route::get('/Home', function () {/*===========>>cart */
     return view('./home');
 });
+
 Route::get('/product', function () {/*===========>>product */
     return view('./product');
-});
+})->middleware('auth');
+
+
 Route::get('/user', function () {/*===========>>product */
     return view('./userProfiles');
 });
