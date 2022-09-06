@@ -42,7 +42,7 @@
                         
                         <div class="form-group mb-3">
                             <div class="container">
-                                    <img src="https://imgs.search.brave.com/3-AK9fr1xlmqYdxel_4vUri-dk8h7OBuGqcddNimaks/rs:fit:860:752:1/g:ce/aHR0cHM6Ly93d3cu/cG5nYWxsLmNvbS93/cC1jb250ZW50L3Vw/bG9hZHMvNS9Vc2Vy/LVByb2ZpbGUtUE5H/LUNsaXBhcnQucG5n"class="rounded-circle" width='60px' alt="">
+                                <img class="img" src="{{asset('upload/avatar/'.$User->avatar)}}" width="80px" height="80px"  alt="User image">
                             </div>
                         
                             <label for="">User Image</label>

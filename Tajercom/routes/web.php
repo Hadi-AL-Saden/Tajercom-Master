@@ -21,10 +21,9 @@ use Illuminate\Support\Facades\Auth;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::get('/', function () {
-    return view('./index');
-});
-Route::get('/index', function () {/*===========>>Home */
+// Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/', function () {/*===========>>Home */
     return view('./index');
 });
 
@@ -47,9 +46,9 @@ Route::get('/checkout.html', function () {/*===========>>checkout */
 Route::get('/cart.html', function () {/*===========>>cart */
     return view('./cart');
 });
-Route::get('/Home', function () {/*===========>>cart */
-    return view('./home');
-});
+// Route::get('/Home', function () {/*===========>>cart */
+//     return view('./home');
+// });
 
 Route::get('/product', function () {/*===========>>product */
     return view('./product');
@@ -63,14 +62,16 @@ Route::get('/user', function () {/*===========>>product */
 
 
 
+Route::get('product', [ProductController::class, 'index']);
 Route::get('add-product', [ProductController::class, 'create']);
 Route::post('add-product', [ProductController::class, 'store']);
 
 
 
 // ========================================================>
-
-
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
+
+
+// Route::get('/app', [App\Http\Controllers\HomeController::class, 'index']);
+// Route::get('/', [App\Http\Controllers\HomeController::class, ' __construct']);

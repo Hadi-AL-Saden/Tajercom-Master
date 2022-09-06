@@ -38,7 +38,7 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/Sliders"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/sliders"
                                 aria-expanded="false">
                                 <i class="fa-solid fa-share"></i>
                                 <span class="hide-menu">Sliders</span>

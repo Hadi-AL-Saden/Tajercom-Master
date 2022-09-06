@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UseCon;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\SlidersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,6 +42,12 @@ Route::get('/category', function () {
 Route::get('/add category', function () {
     return view('addCategory');
 });
+Route::get('/sliders', function () {
+    return view('sliders');
+});
+Route::get('/addSliders', function () {
+    return view('addSliders');
+});
 
 
 
@@ -69,3 +76,16 @@ Route::post('add-category', [CategoryController::class, 'store']);
 
 
 Route::post('add-category', [App\Http\Controllers\CategoryController::class, 'store']);
+
+Route::get('/category', [CategoryController::class, 'index']);
+
+
+
+// ====================================================================
+// ADD Sliders 
+
+Route::get('add-sliders', [SlidersController::class, 'create']);
+Route::post('add-sliders', [SlidersController::class, 'store']);
+
+
+Route::get('sliders', [SlidersController::class, 'index']);

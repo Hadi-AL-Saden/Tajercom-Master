@@ -72,12 +72,10 @@
                             <div class="form-group mb-3">
                                 <label for="">Product Catagory</label>
                                 <select name="cat" class="form-control">
+                                    @foreach($category as $data)
+                                    <option value="{{$data->id}}">{{$data->category_name}}</option>
 
-                                    <option value="1">Cars</option>
-                                    <option value="2">Clothes</option>
-                                    <option value="3">buildings</option>
-                                    <option value="4">Miscellaneous</option>
-
+                                    @endforeach
                                   </select>
                             </div>
                             <div class="form-group mb-3">

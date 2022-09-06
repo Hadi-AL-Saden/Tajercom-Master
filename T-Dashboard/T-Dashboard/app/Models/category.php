@@ -14,4 +14,5 @@ class category extends Model
         'category_img',
 
     ];
+
 }

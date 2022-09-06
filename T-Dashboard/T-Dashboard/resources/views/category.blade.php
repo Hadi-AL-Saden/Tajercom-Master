@@ -181,15 +181,21 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td></td>
-                                            <td></td>  
-                                            <td></td>
+                                        @foreach ($fetch as $item)
+                            <tr>
+                                <td>{{ $item->id }}</td>
+                                <td>{{ $item->category_name }}</td>
+                                <td><img src="{{asset('upload/category/'.$item->category_img)}}" width="80px" height="80px" alt="image"></td>
+                                        
                                             {{-- delete --}}
                                             <td><a href="" class="btn btn-danger btn-sm">Delete</a></td>
                                             {{-- edit --}}
                                             <td><a href="" class="btn btn-primary btn-sm">Edit</a></td>
+                            </tr>
+                   
+                            @endforeach 
                                     </tbody>
+            
                                 </table>
                             </div>
                         </div>

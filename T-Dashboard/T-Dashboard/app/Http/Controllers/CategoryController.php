@@ -3,6 +3,8 @@ namespace App\Http\Controllers\API;
 
 namespace App\Http\Controllers;
 
+
+
 use Illuminate\Http\Request;
 
 use App\Models\category;
@@ -10,6 +12,24 @@ use App\Models\category;
 class CategoryController extends Controller
 {
     //
+
+
+
+
+    public function index()
+    {
+        $fetch = category::all();
+        return view('/category', compact('fetch'));
+    }
+
+
+
+
+
+
+
+
+
     public function store(Request $request)
     {
         $category = new category;
@@ -27,5 +47,6 @@ class CategoryController extends Controller
         $category->save();
         return redirect()->back()->with('status','category Added Successfully');
     }
+    
 
 }

@@ -183,9 +183,7 @@
                                             <td>{{ $item->email }}</td>
                                             <td>{{ $item->phone_num }}</td>
                                             <td>{{ $item->address }}</td>
-                                            {{-- <td><img class="img" src='{{ URL::asset('storage/upload'.$item->avatar)}}">' alt=""></td> --}}
-                                            {{-- <td><img src="{{url('storage/app/public/upload/'.$item->avatar)}}" alt="aaa"></td> --}}
-                                            <td></td>
+                                            <td><img class="img" src="{{asset('upload/avatar/'.$item->avatar)}}" width="80px" height="80px"  alt="User image"></td>
                                            
                                       
                                             
