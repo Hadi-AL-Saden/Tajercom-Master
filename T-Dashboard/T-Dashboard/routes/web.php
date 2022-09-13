@@ -75,7 +75,7 @@ Route::get('add-category', [CategoryController::class, 'create']);
 Route::post('add-category', [CategoryController::class, 'store']);
 
 
-Route::post('add-category', [App\Http\Controllers\CategoryController::class, 'store']);
+// Route::post('add-category', [App\Http\Controllers\CategoryController::class, 'store']);
 
 Route::get('/category', [CategoryController::class, 'index']);
 

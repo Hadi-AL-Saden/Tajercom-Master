@@ -206,7 +206,7 @@
         <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Categories</span></h2>
         <div class="row px-xl-5 pb-3">
            
-            {{-- @foreach($view2 as $data)
+            @foreach($view2 as $data)
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <a class="text-decoration-none" href="">
                     <div class="cat-item d-flex align-items-center mb-4">
@@ -220,7 +220,7 @@
                     </div>
                 </a>
             </div>
-            @endforeach --}}
+            @endforeach
         </div>
     </div>
     <!-- Categories End -->

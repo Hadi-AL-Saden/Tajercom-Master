@@ -12,23 +12,20 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+
 
     /**
      * Show the application dashboard.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    // public function index()
-    // {
-    //     $view1 = DB::table('sliders')->select('sliders_name','sliders_img','sliders_desc')->get();
+    public function index()
+    {
+        $view1 = DB::table('sliders')->select('sliders_name','sliders_img','sliders_desc')->get();
 
-    //     $view2 = DB::table('category')->select('category_name','category_img')->get();
+        $view2 = DB::table('category')->select('category_name','category_img')->get();
 
-    //     return view('/index',compact('view2','view1'));
+        return view('/index',compact('view2','view1'));
 
-    // }
+    }
 }

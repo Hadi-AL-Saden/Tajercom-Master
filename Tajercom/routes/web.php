@@ -73,5 +73,12 @@ Auth::routes();
 
 
 
-// Route::get('/app', [App\Http\Controllers\HomeController::class, 'index']);
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 // Route::get('/', [App\Http\Controllers\HomeController::class, ' __construct']);
+
+
+
+// ===========================================================
+// Route::get('/contact', [ContactController::class, 'contact']);
+// Route::get('M_status', [ContactController::class, 'senEmail'])->name('contact.send');
+
