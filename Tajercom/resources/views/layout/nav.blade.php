@@ -70,7 +70,7 @@
 
 
 
-                            <a href="/user" class="dropdown-item"><i class="fa-solid fa-user">  </i> {{ Auth::user()->name }} </a>
+                            <a href="/userProfiles" class="dropdown-item"><i class="fa-solid fa-user">  </i> {{ Auth::user()->name }} </a>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                             onclick="event.preventDefault();
                                           document.getElementById('logout-form').submit();"><i class="fa-solid fa-arrow-right-from-bracket"> </i>{{ __('Logout') }}

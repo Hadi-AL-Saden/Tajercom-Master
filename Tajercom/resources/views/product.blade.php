@@ -50,7 +50,7 @@
                     </div>
                     <div class="card-body">
     
-                        <form action="{{ url('add-product') }}" method="POST">
+                        <form action="{{ url('add-product') }}" method="POST" enctype="multipart/form-data" >
                             @csrf
     
                             <div class="form-group mb-3">

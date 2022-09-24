@@ -41,11 +41,11 @@
         <div class="main-body">
         
               <!-- Breadcrumb -->
-              <nav aria-label="breadcrumb" class="main-breadcrumb">
-                <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="/index">Home</a></li>
-                  <li class="breadcrumb-item"><a href="javascript:void(0)">User</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">User Profile</li>
+              <nav aria-label="breadcrumb" class="main-breadcrumb bg-dark">
+                <ol class="breadcrumb bg-dark">
+                  <li class="breadcrumb-item  "><a href="/index">Home</a></li>
+                  
+                  <li class="breadcrumb-item text-info " aria-current="page">User Profile</li>
                 </ol>
               </nav>
               <!-- /Breadcrumb -->
@@ -55,15 +55,16 @@
                   <div class="card">
                     <div class="card-body">
                       <div class="d-flex flex-column align-items-center text-center">
-                        <img src="{{ Auth::user()->avatar }}" class="rounded-circle" width="150">
+                        
+                        <img src="{{asset('upload/avatar/'.Auth::user()->avatar)}}" class="rounded" width="150">
                         <div class="mt-3">
-
+                          
                           <h4>{{ Auth::user()->name }}</h4>
                           
-                          <p class="text-secondary mb-1">Full Stack Developer</p>
-                          <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
+                          <p><h4 class="text-primary mb-5 bg-dark">{{ Auth::user()->market_name }}</h4></p>
+                          {{-- <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
                           <button class="btn btn-primary">Follow</button>
-                          <button class="btn btn-outline-primary">Message</button>
+                          <button class="btn btn-outline-primary">Message</button> --}}
                         </div>
                       </div>
                     </div>
@@ -142,7 +143,7 @@
                       <hr>
                       <div class="row">
                         <div class="col-sm-12">
-                          <a class="btn btn-primary "  >Edit</a>
+                          <a class="btn btn-primary "href="/userProfileEidt"  >Edit</a>
                         </div>
                       </div>
                     </div>
@@ -161,6 +162,7 @@
 
 
 
-    
+        @include('layout.footer')
+
 </body>
 </html>

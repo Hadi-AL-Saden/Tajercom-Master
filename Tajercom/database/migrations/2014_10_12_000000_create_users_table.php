@@ -22,12 +22,13 @@ class CreateUsersTable extends Migration
             $table->integer('phone_num')->nullable();
             $table->string('address')->nullable();
             $table->string('market_name')->nullable();
-            $table->string('avatar')->nullable();
+            $table->string('avatar')->default('1663513721.png');
+            $table->string('role')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });
     }
-    
+
     /**
      * Reverse the migrations.
      *
