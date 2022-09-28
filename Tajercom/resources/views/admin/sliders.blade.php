@@ -11,10 +11,10 @@
     <meta name="description"
         content="Ample Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     <meta name="robots" content="noindex,nofollow">
-    <title>Ample Admin Lite Template by WrapPixel</title>
+    <title>Sliders</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="plugins/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Admin/plugins/images/favicon.png">
     <!-- Custom CSS -->
    <link href="Admin/css/style.min.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -53,13 +53,13 @@
                         <!-- Logo icon -->
                         <b class="logo-icon">
                             <!-- Dark Logo icon -->
-                            <img src="Admin/plugins/images/logo-icon.png" alt="homepage" />
+                            {{-- <img src="Admin/plugins/images/logo-icon.png" alt="homepage" /> --}}
                         </b>
                         <!--End Logo icon -->
                         <!-- Logo text -->
                         <span class="logo-text">
                             <!-- dark Logo text -->
-                            <img src="Admin/plugins/images/logo-text.png" alt="homepage" />
+                            <img src="Admin/plugins/images/favicon.png" alt="homepage" width="200px" />
                         </span>
                     </a>
                     <!-- ============================================================== -->
@@ -89,21 +89,14 @@
                         <!-- ============================================================== -->
                         <!-- Search -->
                         <!-- ============================================================== -->
-                        <li class=" in">
-                            <form role="search" class="app-search d-none d-md-block me-3">
-                                <input type="text" placeholder="Search..." class="form-control mt-0">
-                                <a href="" class="active">
-                                    <i class="fa fa-search"></i>
-                                </a>
-                            </form>
-                        </li>
+
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
                         <!-- ============================================================== -->
                         <li>
                             <a class="profile-pic" href="#">
-                                <img src="Admin/plugins/images/users/varun.jpg" alt="user-img" width="36"
-                                    class="img-circle"><span class="text-white font-medium">Steave</span></a>
+                                <img src="{{asset('upload/avatar/'.Auth::user()->avatar)}}" alt="user-img" width="36" height="50"
+                                    class="img-circle"><span class="text-white font-medium">{{Auth::user()->name }}<span></a>
                         </li>
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
@@ -146,17 +139,9 @@
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
-            <!-- ============================================================== -->
-            <!-- End Bread crumb and right sidebar toggle -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
-            <!-- Container fluid  -->
-            <!-- ============================================================== -->
-            <div class="container-fluid">
-                <!-- ============================================================== -->
 
-                 <!-- Start Page Content -->
-                <!-- ============================================================== -->
+            <div class="container-fluid">
+
                 <div class="row">
                     <div class="col-sm-12">
                         @if (session('status'))
@@ -166,8 +151,8 @@
                             
                             <h3 class="box-title" style="position:inherit">Sliders Table </h3>
                             
-                            {{-- <p class="text-muted">Add class <code>.table</code></p> --}}
-                            {{-- <div class="table-responsive"><a href="/addSliders" class="btn btn-info btn-lg float-end ">Add Sliders  </a>
+                
+                            <div class="table-responsive"><a href="/addSliders" class="btn btn-info btn-lg float-end ">Add Sliders  </a>
                                 <table class="table text-nowrap">
                                     <thead>
                                         
@@ -186,16 +171,17 @@
                             <tr>
                                 <td>{{ $item->id }}</td>
                                 <td>{{ $item->sliders_name }}</td>
-                                <td>{{ $item->sliders_desc }}</td>
+                                
+                                <td><textarea class="btn border" rows="3" cols="">{{ $item->sliders_desc }}</textarea></td>
                                 <td><img src="{{asset('upload/sliders/'.$item->sliders_img)}}" width="80px" height="80px" alt="image"></td>
                                         
                                             {{-- delete --}}
-                                            {{-- <td><a href="" class="btn btn-danger btn-sm">Delete</a></td>
+                                            <td><a href="{{ url('delete-sliders/'.$item->id) }}" class="btn btn-danger btn-sm">Delete</a></td>
                                             {{-- edit --}}
-                                            {{-- <td><a href="" class="btn btn-primary btn-sm">Edit</a></td>
+                                            <td><a href="" class="btn btn-primary btn-sm">Edit</a></td>
                             </tr>
                    
-                           @endforeach  --}}
+                           @endforeach
                                     </tbody>
             
                                 </table>
@@ -204,23 +190,9 @@
                     </div>
                 </div>
           
-                <!-- ============================================================== -->
-                <!-- End PAge Content -->
-                <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- Right sidebar -->
-                <!-- ============================================================== -->
-                <!-- .right-sidebar -->
-                <!-- ============================================================== -->
-                <!-- End Right sidebar -->
-                <!-- ============================================================== -->
+
             </div>
-            <!-- ============================================================== -->
-            <!-- End Container fluid  -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
-            <!-- footer -->
-            <!-- ============================================================== -->
+
             <footer class="footer text-center"> 2022 ©<a
                     >Tajecrom.com</a>
             </footer>
@@ -228,20 +200,12 @@
             <!-- End footer -->
             <!-- ============================================================== -->
         </div>
-        <!-- ============================================================== -->
-        <!-- End Page wrapper  -->
-        <!-- ============================================================== -->
     </div>
-    <!-- ============================================================== -->
-    <!-- End Wrapper -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- All Jquery -->
-    <!-- ============================================================== -->
+
     <script src="Admin/plugins/bower_components/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
     <script src="Admin/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="Admin/js/app-style-switcher.js"></script>
+    <script src="js/app-style-switcher.js"></script>
     <!--Wave Effects -->
     <script src="Admin/js/waves.js"></script>
     <!--Menu sidebar -->

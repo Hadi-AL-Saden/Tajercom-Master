@@ -47,16 +47,18 @@
                     <!-- ============================================================== -->
                     <!-- Logo -->
                     <!-- ============================================================== -->
-                    <a class="navbar-brand" >
+                    <a class="navbar-brand" href="dashboard.html">
                         <!-- Logo icon -->
-                        
+                        <b class="logo-icon">
                             <!-- Dark Logo icon -->
-                            <span class="bg-dark text-warning">Tajer</span>
-                        
+                            {{-- <img src="Admin/plugins/images/logo-icon.png" alt="homepage" /> --}}
+                        </b>
                         <!--End Logo icon -->
                         <!-- Logo text -->
+                        <span class="logo-text">
                             <!-- dark Logo text -->
-                            <span class="bg-warning text-dark">Com</span>
+                            <img src="Admin/plugins/images/favicon.png" alt="homepage" width="200px" />
+                        </span>
                     </a>
                     <!-- ============================================================== -->
                     <!-- End Logo -->
@@ -80,21 +82,14 @@
                         <!-- ============================================================== -->
                         <!-- Search -->
                         <!-- ============================================================== -->
-                        <li class=" in">
-                            <form role="search" class="app-search d-none d-md-block me-3">
-                                <input type="text" placeholder="Search..." class="form-control mt-0">
-                                <a href="" class="active">
-                                    <i class="fa fa-search"></i>
-                                </a>
-                            </form>
-                        </li>
+
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
                         <!-- ============================================================== -->
                         <li>
                             <a class="profile-pic" href="#">
-                                <img src="Admin/plugins/images/users/varun.jpg" alt="user-img" width="36"
-                                    class="img-circle"><span class="text-white font-medium">Steave</span></a>
+                                <img src="{{asset('upload/avatar/'.Auth::user()->avatar)}}" alt="user-img" width="36" height="50"
+                                    class="img-circle"><span class="text-white font-medium">{{Auth::user()->name }}<span></a>
 
 
                                     
@@ -160,8 +155,10 @@
                 <!-- ============================================================== -->
                 <!-- Three charts -->
                 <!-- ============================================================== -->
-                <div class="row justify-content-center">
-                    <div class="col-lg-4 col-md-12">
+                 <div class="row justify-content-center">
+                    <img src="Admin/plugins/images/favicon.png" alt="">
+                 </div>
+                  {{--  <div class="col-lg-4 col-md-12">
                         <div class="white-box analytics-info">
                             <h3 class="box-title">Total Visit</h3>
                             <ul class="list-inline two-part d-flex align-items-center mb-0">
@@ -174,6 +171,7 @@
                             </ul>
                         </div>
                     </div>
+                    
                     <div class="col-lg-4 col-md-12">
                         <div class="white-box analytics-info">
                             <h3 class="box-title">Total Page Views</h3>
@@ -201,7 +199,7 @@
                             </ul>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <!-- ============================================================== -->
                 <!-- PRODUCTS YEARLY SALES -->
 

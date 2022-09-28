@@ -20,9 +20,9 @@
     <title>Ample Admin Lite Template by WrapPixel</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="plugins/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Admin/plugins/images/favicon.png">
     <!-- Custom CSS -->
-   <link href="css/style.min.css" rel="stylesheet">
+   <link href="Admin/css/style.min.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -59,13 +59,13 @@
                         <!-- Logo icon -->
                         <b class="logo-icon">
                             <!-- Dark Logo icon -->
-                            <img src="plugins/images/logo-icon.png" alt="homepage" />
+                            {{-- <img src="Admin/plugins/images/logo-icon.png" alt="homepage" /> --}}
                         </b>
                         <!--End Logo icon -->
                         <!-- Logo text -->
                         <span class="logo-text">
                             <!-- dark Logo text -->
-                            <img src="plugins/images/logo-text.png" alt="homepage" />
+                            <img src="Admin/plugins/images/favicon.png" alt="homepage" width="200px" />
                         </span>
                     </a>
                     <!-- ============================================================== -->
@@ -95,21 +95,14 @@
                         <!-- ============================================================== -->
                         <!-- Search -->
                         <!-- ============================================================== -->
-                        <li class=" in">
-                            <form role="search" class="app-search d-none d-md-block me-3">
-                                <input type="text" placeholder="Search..." class="form-control mt-0">
-                                <a href="" class="active">
-                                    <i class="fa fa-search"></i>
-                                </a>
-                            </form>
-                        </li>
+
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
                         <!-- ============================================================== -->
                         <li>
                             <a class="profile-pic" href="#">
-                                <img src="plugins/images/users/varun.jpg" alt="user-img" width="36"
-                                    class="img-circle"><span class="text-white font-medium">Steave</span></a>
+                                <img src="{{asset('upload/avatar/'.Auth::user()->avatar)}}" alt="user-img" width="36" height="50"
+                                    class="img-circle"><span class="text-white font-medium">{{Auth::user()->name }}<span></a>
                         </li>
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
@@ -242,16 +235,16 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-    <script src="plugins/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="Admin/plugins/bower_components/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/app-style-switcher.js"></script>
+    <script src="Admin/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="Admin/js/app-style-switcher.js"></script>
     <!--Wave Effects -->
-    <script src="js/waves.js"></script>
+    <script src="Admin/js/waves.js"></script>
     <!--Menu sidebar -->
-    <script src="js/sidebarmenu.js"></script>
+    <script src="Admin/js/sidebarmenu.js"></script>
     <!--Custom JavaScript -->
-    <script src="js/custom.js"></script>
+    <script src="Admin/js/custom.js"></script>
 </body>
 
 </html>

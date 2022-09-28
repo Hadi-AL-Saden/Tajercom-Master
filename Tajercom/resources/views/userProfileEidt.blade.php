@@ -43,15 +43,17 @@
               <!-- Breadcrumb -->
               <nav aria-label="breadcrumb" class="main-breadcrumb bg-dark">
                 <ol class="breadcrumb bg-dark">
-                  <li class="breadcrumb-item  "><a href="/index">Home</a></li>
-                  
+                  <li class="breadcrumb-item  "><a href="/">Home</a></li>
                   <li class="breadcrumb-item text-primary " aria-current="page"><a href="/userProfiles">User Profile</a> </li>
                   <li class="breadcrumb-item text-info " aria-current="page">User Profile Edit</li>
                 </ol>
               </nav>
               <!-- /Breadcrumb -->
-        
+              @if (session('status'))
+              <h6 class="alert alert-success">{{ session('status') }}</h6>
+          @endif
               <div class="row gutters-sm">
+                
                 <div class="col-md-4 mb-3">
                   <form action="{{ url('update-user-img/'.Auth::user()->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
@@ -59,7 +61,7 @@
                     <div class="card-body">
                       <div class="d-flex flex-column align-items-center text-center">
                         
-                        <img src="{{asset('upload/avatar/'.Auth::user()->avatar)}}" class="rounded" width="150">
+                        <img src="{{asset('upload/avatar/'.Auth::user()->avatar)}}" class="rounded" width="150" height="150">
                           <div>  <label for="avatar">Eidt your image</label>
                         <input type="file"  name="avatar" value="{{Auth::user()->avatar }}"  class="form-control">
                             </div>
@@ -149,7 +151,7 @@
                           <h6 class="mb-0">Phone:</h6>
                         </div>
                         <div class="col-sm-9 ">
-                            <input name="phone" type="text" value="{{Auth::user()->phone }}" class="form-control">
+                            <input name="phone" type="text" value="{{Auth::user()->phone_num }}" class="form-control">
 
                         </div>
                       </div>

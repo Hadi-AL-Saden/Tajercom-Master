@@ -11,18 +11,13 @@
     <meta name="description"
         content="Ample Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     <meta name="robots" content="noindex,nofollow">
-    <title>users</title>
+    <title>Users</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="Admin/plugins/images/favicon.png">
     <!-- Custom CSS -->
    <link href="Admin/css/style.min.css" rel="stylesheet">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
+
 </head>
 
 <body>
@@ -53,27 +48,20 @@
                         <!-- Logo icon -->
                         <b class="logo-icon">
                             <!-- Dark Logo icon -->
-                            <img src="Admin/plugins/images/logo-icon.png" alt="homepage" />
+                            {{-- <img src="Admin/plugins/images/logo-icon.png" alt="homepage" /> --}}
                         </b>
                         <!--End Logo icon -->
                         <!-- Logo text -->
                         <span class="logo-text">
                             <!-- dark Logo text -->
-                            <img src="Admin/plugins/images/logo-text.png" alt="homepage" />
+                            <img src="Admin/plugins/images/favicon.png" alt="homepage" width="200px" />
                         </span>
                     </a>
-                    <!-- ============================================================== -->
-                    <!-- End Logo -->
-                    <!-- ============================================================== -->
-                    <!-- ============================================================== -->
-                    <!-- toggle and nav items -->
-                    <!-- ============================================================== -->
+
                     <a class="nav-toggler waves-effect waves-light text-dark d-block d-md-none"
                         href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
                 </div>
-                <!-- ============================================================== -->
-                <!-- End Logo -->
-                <!-- ============================================================== -->
+ 
                 <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
                     <ul class="navbar-nav d-none d-md-block d-lg-none">
                         <li class="nav-item">
@@ -81,82 +69,48 @@
                                 href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
                         </li>
                     </ul>
-                    <!-- ============================================================== -->
-                    <!-- Right side toggle and nav items -->
-                    <!-- ============================================================== -->
+
                     <ul class="navbar-nav ms-auto d-flex align-items-center">
 
-                        <!-- ============================================================== -->
-                        <!-- Search -->
-                        <!-- ============================================================== -->
-                        <li class=" in">
-                            <form role="search" class="app-search d-none d-md-block me-3">
-                                <input type="text" placeholder="Search..." class="form-control mt-0">
-                                <a href="" class="active">
-                                    <i class="fa fa-search"></i>
-                                </a>
-                            </form>
-                        </li>
-                        <!-- ============================================================== -->
-                        <!-- User profile and search -->
-                        <!-- ============================================================== -->
+
+
+
                         <li>
                             <a class="profile-pic" href="#">
-                                <img src="Admin/plugins/images/users/varun.jpg" alt="user-img" width="36"
-                                    class="img-circle"><span class="text-white font-medium">Steave</span></a>
+                                <img src="{{asset('upload/avatar/'.Auth::user()->avatar)}}" alt="user-img" width="36" height="50"
+                                    class="img-circle"><span class="text-white font-medium">{{Auth::user()->name }}<span></a>
                         </li>
-                        <!-- ============================================================== -->
-                        <!-- User profile and search -->
-                        <!-- ============================================================== -->
+
                     </ul>
                 </div>
             </nav>
         </header>
-        <!-- ============================================================== -->
-        <!-- End Topbar header -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Left Sidebar - style you can find in sidebar.scss  -->
-        <!-- ============================================================== -->
+
         @include('layout.side')
 
-        <!-- ============================================================== -->
-        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Page wrapper  -->
-        <!-- ============================================================== -->
+
         <div class="page-wrapper">
-            <!-- ============================================================== -->
-            <!-- Bread crumb and right sidebar toggle -->
-            <!-- ============================================================== -->
+
             <div class="page-breadcrumb bg-white">
                 <div class="row align-items-center">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">Basic Table</h4>
+                        <h4 class="page-title">Users Table</h4>
                     </div>
 
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
-            <!-- ============================================================== -->
-            <!-- End Bread crumb and right sidebar toggle -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
-            <!-- Container fluid  -->
-            <!-- ============================================================== -->
+
             <div class="container-fluid">
-                <!-- ============================================================== -->
-                <!-- Start Page Content -->
-                <!-- ============================================================== -->
+
                 <div class="row">
                     <div class="col-sm-12">
                         @if (session('status'))
                 <h6 class="alert alert-success">{{ session('status') }}</h6>
             @endif
                         <div class="white-box">
-                            <h3 class="box-title">Basic Table</h3>
-                            <p class="text-muted">Add class <code>.table</code></p>
+                            <h3 class="box-title">Users Table</h3>
+                         
                             <div class="table-responsive">
                                 <table class="table text-nowrap">
                                     <thead>
@@ -201,38 +155,13 @@
                         </div>
                     </div>
                 </div>
-                <!-- ============================================================== -->
-                <!-- End PAge Content -->
-                <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- Right sidebar -->
-                <!-- ============================================================== -->
-                <!-- .right-sidebar -->
-                <!-- ============================================================== -->
-                <!-- End Right sidebar -->
-                <!-- ============================================================== -->
-            </div>
-            <!-- ============================================================== -->
-            <!-- End Container fluid  -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
-            <!-- footer -->
-            <!-- ============================================================== -->
 
-            <!-- ============================================================== -->
-            <!-- End footer -->
-            <!-- ============================================================== -->
+            </div>
+
         </div>
-        <!-- ============================================================== -->
-        <!-- End Page wrapper  -->
-        <!-- ============================================================== -->
+
     </div>
-    <!-- ============================================================== -->
-    <!-- End Wrapper -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- All Jquery -->
-    <!-- ============================================================== -->
+
     <script src="Admin/plugins/bower_components/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
     <script src="Admin/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

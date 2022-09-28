@@ -61,7 +61,6 @@ Route::get('/user', [UseCon::class, 'index']);
 // Edit Uesr 
 Route::get('edit-user/{id}', [UseCon::class, 'edit']);
 Route::put('update-user/{id}', [UseCon::class, 'update']);
-
 // Delete Uesr 
 Route::get('delete-user/{id}', [UseCon::class, 'destroy']);
 

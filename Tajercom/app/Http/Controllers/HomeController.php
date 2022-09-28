@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+    use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
@@ -25,20 +25,30 @@ class HomeController extends Controller
         $role= Auth::user()->role;
 
         if($role==0){
-            return view('/index');
+            return view('/userProfiles');
         }
         if($role==1){
             return view('admin.dashboard');
         }else{
-            return view('admin.dashborad');
+            return view('admin.dashboard');
         }
     }
 
-    public function category_Show(){
-                $view1 = DB::table('sliders')->select('sliders_name','sliders_img','sliders_desc')->get();
 
-        $view2 = DB::table('category')->select('category_name','category_img')->get();
 
-        return view('/index',compact('view2','view1'));
-    }
+
+
+    // public function index()
+    // {
+    //     $email= Auth::user()->email;
+    //     $pass= Auth::user()->password;
+
+    //     if($email==='admin@admin.com' && $pass==='hadidota2'){
+    //         return view('admin.profile');
+    //     }
+       
+    //     else{
+    //         return view('/index');
+    //     }
+    // }
 }

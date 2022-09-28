@@ -33,7 +33,7 @@ class UesrProfileEdit extends Controller
         $user->address = $request->input('address');
     
         $user->update();
-        return redirect()->back()->with('status','user Updated Successfully');
+        return redirect()->back()->with('status','Your Profil Has Been Updated Successfully');
     }
 
 
@@ -57,7 +57,7 @@ class UesrProfileEdit extends Controller
 
         $user->save();
         $user->update();
-        return redirect()->back()->with('status','user Updated Successfully');
+        return redirect()->back()->with('status','Your Profil Has Been Updated Successfully');
     }
 
 }

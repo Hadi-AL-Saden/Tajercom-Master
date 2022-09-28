@@ -19,7 +19,7 @@ class UseCon extends Controller
     public function edit($id)
     {
         $User = User::find($id);
-        return view('/edit', compact('User'));
+        return view('/editUser', compact('User'));
     }
 
     public function update(Request $request, $id)

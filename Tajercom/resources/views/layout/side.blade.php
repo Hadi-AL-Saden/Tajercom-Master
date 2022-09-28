@@ -10,7 +10,7 @@
                     <ul id="sidebarnav">
                         <!-- User Profile-->
                         <li class="sidebar-item pt-2">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/dashboard"
                                 aria-expanded="false">
                                 <i class="far fa-clock" aria-hidden="true"></i>
                                 <span class="hide-menu">Dashboard</span>
@@ -31,7 +31,7 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/Products"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/item"
                                 aria-expanded="false">
                                 <i class="fa-solid fa-dolly"></i>
                                 <span class="hide-menu">Products</span>

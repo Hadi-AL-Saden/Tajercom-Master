@@ -3,6 +3,7 @@ namespace App\Http\Controllers\API;
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 
 
 use Illuminate\Http\Request;
@@ -81,6 +82,14 @@ class CategoryController extends Controller
 
 
 
-    
+    public function category_Show(){
+        $view1 = DB::table('sliders')->select('id','sliders_name','sliders_img','sliders_desc')->get();
+
+$view2 = DB::table('category')->select('category_name','category_img')->get();
+
+$view3 = DB::table('product')->select()->get();
+
+return view('/index',compact('view2','view1','view3'));
+}
 
 }

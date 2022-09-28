@@ -59,13 +59,13 @@
                         <!-- Logo icon -->
                         <b class="logo-icon">
                             <!-- Dark Logo icon -->
-                            <img src="Admin/plugins/images/logo-icon.png" alt="homepage" />
+                            {{-- <img src="Admin/plugins/images/logo-icon.png" alt="homepage" /> --}}
                         </b>
                         <!--End Logo icon -->
                         <!-- Logo text -->
                         <span class="logo-text">
                             <!-- dark Logo text -->
-                            <img src="Admin/plugins/images/logo-text.png" alt="homepage" />
+                            <img src="Admin/plugins/images/favicon.png" alt="homepage" width="200px" />
                         </span>
                     </a>
                     <!-- ============================================================== -->
@@ -95,21 +95,14 @@
                         <!-- ============================================================== -->
                         <!-- Search -->
                         <!-- ============================================================== -->
-                        <li class=" in">
-                            <form role="search" class="app-search d-none d-md-block me-3">
-                                <input type="text" placeholder="Search..." class="form-control mt-0">
-                                <a href="" class="active">
-                                    <i class="fa fa-search"></i>
-                                </a>
-                            </form>
-                        </li>
+
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
                         <!-- ============================================================== -->
                         <li>
                             <a class="profile-pic" href="#">
-                                <img src="Admin/plugins/images/users/varun.jpg" alt="user-img" width="36"
-                                    class="Admin/img-circle"><span class="text-white font-medium">Steave</span></a>
+                                <img src="{{asset('upload/avatar/'.Auth::user()->avatar)}}" alt="user-img" width="36" height="50"
+                                    class="img-circle"><span class="text-white font-medium">{{Auth::user()->name }}<span></a>
                         </li>
                         <!-- ============================================================== -->
                         <!-- User profile and search -->

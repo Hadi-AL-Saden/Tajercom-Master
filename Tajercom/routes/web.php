@@ -6,6 +6,11 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\UseCon;
 use App\Http\Controllers\UesrProfileEdit;
+use App\Http\Controllers\shop;
+use App\Http\Controllers\ProductAdminCcontroller;
+use App\Http\Controllers\SlidersController;
+use App\Http\Controllers\navController;
+
 use Illuminate\Support\Facades\Auth;
 
 
@@ -27,21 +32,26 @@ use Illuminate\Support\Facades\Auth;
 // });
 // Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+// Route::get('/redire', function () {/*===========>>Home */
+//     return view('./index');
+// });
 Route::get('/', function () {/*===========>>Home */
-    return view('./index');
+    return view('/index');
 });
 
 
-Route::get('/redirects',[HomeController::class, 'index']);
+Route::get('/redirect',[HomeController::class, 'index']);
 
 
-Route::get('/shop', function () {/*===========>>Shop */
-    return view('./shop');
-});
 
-Route::get('/detail.html', function () {/*===========>>detail */
-    return view('./detail');
-});
+
+
+
+
+
+Route::get('/shop', [shop::class, 'shop']);
+
+Route::get('/detail/{id}', [shop::class, 'item']);
 
 Route::get('/contact.html', function () {/*===========>>contact */
     return view('./contact');
@@ -51,9 +61,9 @@ Route::get('/checkout.html', function () {/*===========>>checkout */
     return view('./checkout');
 });
 
-Route::get('/cart.html', function () {/*===========>>cart */
-    return view('./cart');
-});
+// Route::get('/cart.html', function () {/*===========>>cart */
+//     return view('./cart');
+// });
 // Route::get('/Home', function () {/*===========>>cart */
 //     return view('./home');
 // });
@@ -95,11 +105,12 @@ Route::post('add-product', [ProductController::class, 'store']);
 
 
 // ========================================================>
-
+// Route::get('/redirect', [App\Http\Controllers\CategoryController::class, 'category_Show']);
+Route::get('/', [App\Http\Controllers\CategoryController::class, 'category_Show']);
+Route::get('/index', [App\Http\Controllers\CategoryController::class, 'category_Show']);
 // Fetch-Category-TO-Home-Page
 Auth::routes();
-Route::get('/redirects', [App\Http\Controllers\HomeController::class, 'category_Show']);
-Route::get('/', [App\Http\Controllers\HomeController::class, 'category_Show']);
+
 
 
 
@@ -123,6 +134,9 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'category_Show']);
 // ===================================================================================================================================================
 // Admin-Dash-Borad-Rout's
 
+Route::get('/dashboard', function () {
+    return view('admin.dashboard');
+});
 Route::get('/profile', function () {
     return view('admin.profile');
 });
@@ -145,6 +159,9 @@ Route::get('/sliders', function () {
 
 Route::get('/addSliders', function () {
     return view('admin.addSliders');
+});
+Route::get('/item', function () {
+    return view('admin.item');
 });
 
 
@@ -177,3 +194,23 @@ Route::put('update-user/{id}', [UseCon::class, 'update']);
 Route::get('delete-user/{id}', [UseCon::class, 'destroy']);
 
 Route::post('User', [App\Http\Controllers\UseCon::class, 'store']);
+
+
+// ================================================================
+// Product Admin
+
+Route::get('/item', [ProductAdminCcontroller::class, 'index']);
+
+Route::get('delete-product/{id}', [ProductAdminCcontroller::class, 'destroy']);
+
+// ====================================================================
+// ADD Sliders 
+Route::get('/sliders', [SlidersController::class, 'index']);
+Route::get('add-sliders', [SlidersController::class, 'create']);
+Route::post('add-sliders', [SlidersController::class, 'store']);
+
+Route::get('delete-sliders/{id}', [SlidersController::class, 'destroy']);
+// ====================================================================
+
+
+// Route::get('nav', [SlidersController::class, 'category_Show']);
